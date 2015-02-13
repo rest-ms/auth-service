@@ -49,7 +49,8 @@ public class AuthServiceApp extends Application<AppConfiguration> {
         	}
         });
         
-        CredentialsAuthenticator authenticator = new CredentialsAuthenticator(appConfiguration.getPrivateKeyFile());
+        CredentialsAuthenticator authenticator = injector.getInstance(CredentialsAuthenticator.class);
+        authenticator.setPrivateKeyFile(appConfiguration.getPrivateKeyFile());
 
         environment.jersey().register(injector.getInstance(GenerateToken.class));
         environment.jersey().register(injector.getInstance(WhoAmI.class));
