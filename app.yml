@@ -24,11 +24,6 @@ logging:
     "com.yammer": INFO
     "it.siletto.ms": DEBUG
 
-# Define admin users (email address and provider uniquely identifies a user)
-adminUsers:
-  test@test.com: facebook
-  name@name.com: googleplus
-#
 #
 privateKeyFile:
   /Users/Alessandro/workspace/rest-ms/auth-service/src/test/java/private.key
