@@ -100,7 +100,7 @@
 									implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
 								<transformer
 									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-									<mainClass>it.siletto.ms.auth.AuthService</mainClass>
+									<mainClass>it.siletto.ms.auth.AuthServiceApp</mainClass>
 								</transformer>
 							</transformers>
 						</configuration>
