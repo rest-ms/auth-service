@@ -59,33 +59,4 @@ public class GenerateToken extends BaseResource {
 
 	}
 
-	/*
-	 * http://localhost:8080/token/verify?username=pippo&password=pluto&rand=123&token=FtsaDm6gEmEDlyWnOu48MBT4BgUbjhgFk6xwU0HsnHQBmSQ6ZICnqlUhno8g84P2ZtVbVIECJ2TsxJxrwWlea1CY2kslbD0gHsaQjGivDtomKFx/JtOVTeP03hB6PcIi6KoOC8Gw2M1tMZUX2zqXXyUX7R2hjSy2lfDnOgauP/HxglhRmZbYLEyFqQMBKVoDrsS3ZNwT/GwlrKucks6hA1P4GH0rlhiTpUQGiPgQETcKmkD+SD5bm5FeS6wDd1lZNNK2yDrixHBudRlNpyt+hE98DeKs6fn3WxudqDr5jOQb/Al4t0Qsv+zwOe4EqnoRGnwK8euWomySAenFMlgDVA==
-	 * 
-	 *	{
-	 * 		expires: 1423588036077,
-	 *		token: "FtsaDm6gEmEDlyWnOu48MBT4BgUbjhgFk6xwU0HsnHQBmSQ6ZICnqlUhno8g84P2ZtVbVIECJ2TsxJxrwWlea1CY2kslbD0gHsaQjGivDtomKFx/JtOVTeP03hB6PcIi6KoOC8Gw2M1tMZUX2zqXXyUX7R2hjSy2lfDnOgauP/HxglhRmZbYLEyFqQMBKVoDrsS3ZNwT/GwlrKucks6hA1P4GH0rlhiTpUQGiPgQETcKmkD+SD5bm5FeS6wDd1lZNNK2yDrixHBudRlNpyt+hE98DeKs6fn3WxudqDr5jOQb/Al4t0Qsv+zwOe4EqnoRGnwK8euWomySAenFMlgDVA==",
-	 *		status: "OK"
-	 * }
-	
-	@GET
-	@Timed
-	@Path("verify")
-	@CacheControl(noCache = true)
-	public Map<String,Object> verify(@QueryParam("username") String username, @QueryParam("password") String password, @QueryParam("token") String token, @QueryParam("rand") String rand) throws Exception {
-				
-		String userAgent = request.getHeader("User-Agent");
-		
-		Boolean check = authDao.verifyToken(AuthService.getConfig().getPublicKeyFile(), token, username, password, userAgent, rand);
-		
-		Map<String,Object> ret = new HashMap<String,Object>();
-		ret.put("status", "OK");
-		ret.put("verify", check);
-		ret.put("expires", new Date().getTime() + EXPIRE_WINDOW);
-		
-		return ret;
-
-	} */
-
-
 }

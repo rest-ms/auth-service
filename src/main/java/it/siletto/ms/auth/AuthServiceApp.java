@@ -4,7 +4,6 @@ import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import it.siletto.ms.auth.resources.GenerateToken;
-import it.siletto.ms.auth.resources.TestCors;
 import it.siletto.ms.auth.resources.WhoAmI;
 import it.siletto.ms.auth.service.AuthDAO;
 import it.siletto.ms.auth.service.CypherService;
@@ -54,7 +53,6 @@ public class AuthServiceApp extends Application<AppConfiguration> {
 
         environment.jersey().register(injector.getInstance(GenerateToken.class));
         environment.jersey().register(injector.getInstance(WhoAmI.class));
-        environment.jersey().register(injector.getInstance(TestCors.class));
 
         environment.healthChecks().register("test", new BasicHealthCheck());
 
