@@ -13,10 +13,12 @@
 	<description>Token Authentication Service for Single Page Apps</description>
 	<inceptionYear>2015</inceptionYear>
 
-	<properties>
-		<dropwizard.version>0.7.1</dropwizard.version>
-	</properties>
-
+    <properties>
+    	<dropwizard.version>0.7.1</dropwizard.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+    
 	<repositories>
 		<repository>
 			<id>aws-release</id>
