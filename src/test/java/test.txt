@@ -1,0 +1,2 @@
+wget -O token "http://localhost:8080/token/generate?username=pippo&password=pluto"
+wget -O whoami --header="Content-Type: application/json" --header="Authentication: Bearer Ouy318+8+SiUNH5IjMI3xdPOSZs4kXteBUnfBJA1G/pqzpRw8wa9qCxN5YBU0H7LXCWefqiSuZadP46UXyeDcGpi/4Tb3ZC1Ocr1tUwzjIAMCMK9QEw0bmAqTNaMON8ZhkxKrQccKQ7pu0bLfLeBHebWFO9rKYNMzY/W8ynA2rrwuyP95dCLXb4skhdJ+OgMsl7e9GySBmNo9RzDY1Bjh/NH0/gz+V1/LUTu1LtUp0Nv6E4C4wpUEDJWJrIfS8vfazmeUarziYVKVvZ+q/PYqcW8sgjqBK8qhPUDzfTZzazDfOqjBPfS6m8Hl08F4tXr0ElvTtn44c9jmcKWoCAzdg==" http://localhost:8080/whoami
