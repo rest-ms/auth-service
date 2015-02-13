@@ -37,8 +37,7 @@ public class TestGenerateToken {
 
 		System.out.println("token:" + res.getToken());
 				
-		String privateKeyFile = "C:/Users/Alessandro/workspace/auth-service/src/test/java/private.key";
-		String tokenData = new CypherServiceRSAImpl().decrypt(privateKeyFile, res.getToken());
+		String tokenData = new CypherServiceRSAImpl().decrypt(RULE.getConfiguration().getPrivateKeyFile(), res.getToken());
 		System.out.println("tokenData:" + tokenData);
 		
 		ObjectMapper mapper = new ObjectMapper();

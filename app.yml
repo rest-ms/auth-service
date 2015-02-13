@@ -31,6 +31,6 @@ adminUsers:
 #
 #
 privateKeyFile:
-  /Users/Alessandro/workspace/auth-service/src/test/java/private.key
+  /Users/Alessandro/workspace/rest-ms/auth-service/src/test/java/private.key
 publicKeyFile:
-  /Users/Alessandro/workspace/auth-service/src/test/java/public.key
+  /Users/Alessandro/workspace/rest-ms/auth-service/src/test/java/public.key
