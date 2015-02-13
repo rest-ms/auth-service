@@ -2,12 +2,12 @@ package it.siletto.ms.auth.resources;
 
 import io.dropwizard.jersey.caching.CacheControl;
 import it.siletto.ms.auth.AuthServiceApp;
-import it.siletto.ms.auth.User;
 import it.siletto.ms.auth.dto.TokenResponseDTO;
-import it.siletto.ms.auth.service.AuthDAO;
 import it.siletto.ms.auth.service.CypherService;
 import it.siletto.ms.base.cors.Cors;
 import it.siletto.ms.base.resources.BaseResource;
+import it.siletto.ms.identity.model.Identity;
+import it.siletto.ms.identity.service.IdentityDAO;
 
 import java.util.Date;
 
@@ -30,7 +30,7 @@ public class GenerateToken extends BaseResource {
 	protected CypherService cryptService;
 	
 	@Inject
-	protected AuthDAO authDao;
+	protected IdentityDAO identityDao;
 	
 	@GET
 	@Timed
@@ -39,7 +39,7 @@ public class GenerateToken extends BaseResource {
 	@Cors
 	public TokenResponseDTO generate(@QueryParam("username") String username, @QueryParam("password") String password) throws Exception {
 		
-		User user = authDao.getUser(username, password);
+		Identity user = identityDao.getUser(username, password);
 		
 		TokenResponseDTO ret = new TokenResponseDTO();
 		
@@ -48,7 +48,7 @@ public class GenerateToken extends BaseResource {
 		}else{
 			
 			long expire = new Date().getTime() + EXPIRE_WINDOW;
-			String token = cryptService.generateToken(AuthServiceApp.getConfig().getPublicKeyFile(), user.getUserName(), user.getAuthorities(), expire);
+			String token = cryptService.generateToken(AuthServiceApp.getConfig().getPublicKeyFile(), user.getUsername(), user.getRoles(), expire);
 			
 			ret.setStatus(TokenResponseDTO.STATUS_OK);
 			ret.setToken(token);

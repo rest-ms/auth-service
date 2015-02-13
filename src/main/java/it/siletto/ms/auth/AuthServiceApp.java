@@ -5,12 +5,12 @@ import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import it.siletto.ms.auth.resources.GenerateToken;
 import it.siletto.ms.auth.resources.WhoAmI;
-import it.siletto.ms.auth.service.AuthDAO;
 import it.siletto.ms.auth.service.CypherService;
-import it.siletto.ms.auth.service.impl.AuthDAOStaticImpl;
 import it.siletto.ms.auth.service.impl.CypherServiceRSAImpl;
 import it.siletto.ms.base.cors.CorsFilterFactory;
 import it.siletto.ms.base.health.BasicHealthCheck;
+import it.siletto.ms.identity.service.IdentityDAO;
+import it.siletto.ms.identity.service.impl.IdentityDAOMockImpl;
 
 import com.google.inject.Binder;
 import com.google.inject.Guice;
@@ -44,7 +44,7 @@ public class AuthServiceApp extends Application<AppConfiguration> {
         Injector injector = Guice.createInjector(new Module(){
         	@Override
         	public void configure(Binder binder) {
-        		binder.bind(AuthDAO.class).to(AuthDAOStaticImpl.class);
+        		binder.bind(IdentityDAO.class).to(IdentityDAOMockImpl.class);
         		binder.bind(CypherService.class).to(CypherServiceRSAImpl.class);
         	}
         });

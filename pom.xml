@@ -120,6 +120,12 @@
 
 		<dependency>
 			<groupId>it.siletto.ms</groupId>
+			<artifactId>identity-utils</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>it.siletto.ms</groupId>
 			<artifactId>base-utils</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
