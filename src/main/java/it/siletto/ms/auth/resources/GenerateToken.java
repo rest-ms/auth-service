@@ -39,7 +39,7 @@ public class GenerateToken extends BaseResource {
 	@Cors
 	public TokenResponseDTO generate(@QueryParam("username") String username, @QueryParam("password") String password) throws Exception {
 		
-		Identity user = identityDao.getUser(username, password);
+		Identity user = identityDao.getUser(username, password, AuthServiceApp.getConfig().getRealm());
 		
 		TokenResponseDTO ret = new TokenResponseDTO();
 		

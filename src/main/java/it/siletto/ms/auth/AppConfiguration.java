@@ -18,6 +18,9 @@ public class AppConfiguration extends Configuration {
 	private String proxyHost = null;
 
 	@JsonProperty
+	private String realm = null;
+
+	@JsonProperty
 	private int proxyPort = 8080;
 
 	@JsonProperty
@@ -44,5 +47,13 @@ public class AppConfiguration extends Configuration {
 
 	public String getPublicKeyFile() {
 		return publicKeyFile;
+	}
+
+	public String getRealm() {
+		return realm;
+	}
+
+	public void setRealm(String realm) {
+		this.realm = realm;
 	}
 }
