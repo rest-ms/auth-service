@@ -26,8 +26,8 @@ logging:
 
 #
 privateKeyFile:
-  /Users/Alessandro/workspace/rest-ms/auth-service/src/test/java/private.key
+  D:/dev/workspaces/personale/rest-ms/auth-service/src/test/java/private.key
 publicKeyFile:
-  /Users/Alessandro/workspace/rest-ms/auth-service/src/test/java/public.key
+  D:/dev/workspaces/personale/rest-ms/auth-service/src/test/java/public.key
 realm:
   test
