@@ -21,13 +21,13 @@ logging:
 
     # Set specific levels
     "com.sun.jersey.api.client": DEBUG
-    "io.dropwizard": DEBUG
+    "io.dropwizard": INFO
     "it.siletto.ms": DEBUG
 
 #
 privateKeyFile:
-  D:/dev/workspaces/personale/rest-ms/auth-service/src/test/java/private.key
+  /data/private.key
 publicKeyFile:
-  D:/dev/workspaces/personale/rest-ms/auth-service/src/test/java/public.key
+  /data/public.key
 realm:
   test
