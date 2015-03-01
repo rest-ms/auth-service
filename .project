@@ -3,9 +3,9 @@
   <name>auth-service</name>
   <comment>Token Authentication Service for Single Page Apps. NO_M2ECLIPSE_SUPPORT: Project files created with the maven-eclipse-plugin are not supported in M2Eclipse.</comment>
   <projects>
-    <project>auth-utils</project>
-    <project>base-utils</project>
+    <project>auth-client</project>
     <project>identity-utils</project>
+    <project>base-utils</project>
   </projects>
   <buildSpec>
     <buildCommand>
